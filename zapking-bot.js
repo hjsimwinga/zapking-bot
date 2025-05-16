@@ -98,24 +98,6 @@ async function reactToPost(event) {
   }
 }
 
-// Function to set up profile for ZapKing
-async function setupProfile() {
-  const profileEvent = {
-    kind: 0,
-    created_at: Math.floor(Date.now() / 1000),
-    tags: [],
-    content: JSON.stringify({
-      name: "ZapKing",
-      about: "I react to posts mentioning BuzzBot ⚡",
-      picture: "https://cdn-icons-png.flaticon.com/512/1532/1532529.png"
-    }),
-    pubkey: publicKey
-  };
-
-  await signAndSend(profileEvent);
-  console.log('Profile updated for ZapKing');
-}
-
 // Updated detection function: only react to original posts with exact BuzzBot mention (npub or @buzzbot), no replies/comments
 function detectsBuzzBotMention(event) {
   if (event.kind !== 1) return false;
@@ -137,7 +119,7 @@ function detectsBuzzBotMention(event) {
 async function monitorPosts() {
   console.log('ZapKing bot is starting...');
 
-  await setupProfile();
+  // NOTE: Removed setupProfile() so manual profile changes stay intact
 
   // Subscribe to all new notes (kind 1)
   const sub = pool.sub(RELAYS, [
@@ -177,3 +159,4 @@ process.on('SIGINT', () => {
 });
 
 monitorPosts();
+
