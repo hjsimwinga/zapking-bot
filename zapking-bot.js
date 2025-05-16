@@ -2,7 +2,7 @@ import { SimplePool, nip19, getEventHash, getSignature, getPublicKey } from 'nos
 import 'websocket-polyfill';
 
 // Configuration for the ZapKing bot
-const nsecKey = 'nsec1wcypquaq2x5k7e6knc47wuqfyjugpvvdwgncv09gl6ktuyaguynq7s2jmr'; // Your private key
+const nsecKey = 'nsec1egsl0ju80h2crkalshu90c5hk99e3wt7m5zhtrsj7rkfe37l0ghq0y2d8d'; // Your private key
 const privateKey = nip19.decode(nsecKey).data;
 const publicKey = getPublicKey(privateKey);
 
