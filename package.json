@@ -1,0 +1,17 @@
+{
+  "name": "zapking-bot",
+  "version": "1.0.0",
+  "description": "A Nostr bot that reacts to BuzzBot mentions",
+  "main": "zapking-bot.js",
+  "type": "module",
+  "scripts": {
+    "start": "node zapking-bot.js"
+  },
+  "dependencies": {
+    "nostr-tools": "^1.17.0",
+    "websocket-polyfill": "^0.0.3"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
